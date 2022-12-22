@@ -31,13 +31,14 @@ Mesh::Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, glm::v
 void Mesh::Draw(Camera& camera, Shader& shader)
 {
 	
+	
 	shader.Activate();
-
 	
 	for (Vertex vert : vertices)
 	{
-		vert.Draw(vertexShaderProgram);
+		vert.Draw(vertexShaderProgram, camera.cameraMatrix);
 	}
+	
 	
 	VAO.Bind();
 
