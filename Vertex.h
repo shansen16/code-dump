@@ -22,7 +22,7 @@ struct Vertex
 	bool selected;
 
 
-	void Draw(Shader& Shader);
+	void Draw(Shader& shader, glm::mat4 cameraMatrix);
 };
 
 #endif VERTEX_STRUCT_H

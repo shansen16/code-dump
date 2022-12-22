@@ -18,7 +18,7 @@ public:
 
 	Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, glm::vec3 colour, Shader& vertexShaderProgram);
 	bool printed = false;
-	bool editMode = true;
+	bool editMode = false;
 
 	void Draw(Camera& camera, Shader& shader);
 	void DrawEditMode(Camera& camera, Shader& shader);

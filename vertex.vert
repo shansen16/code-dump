@@ -1,17 +1,19 @@
 #version 330 core
 
-out vec2 fragPos;
 
+out vec4 colour;
+out vec4 position;
 
-uniform mat4 translation;
+uniform vec3 aPosition;
+uniform mat4 camMatrix;
+uniform vec3 aColour;
 
 
 // Outputs the colour for the Fragment Shader
 
 void main()
 {
-	vec2 pointPos = vec2(translation[3][0], translation[3][1]);
-	fragPos = pointPos;
-	aColour = vec4(0.0, 0.0, 0.0, 0.0);
-	uResolution = resolution;
+	position = camMatrix * vec4(aPosition, 1.0);
+
+	colour =  vec4(aColour, 1.0);
 }
